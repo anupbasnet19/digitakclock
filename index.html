@@ -34,13 +34,13 @@
     <div id="clock"></div> 
   
     <script> 
-        setInterval(showTime, 5000); 
-        function showTime() { 
+        setInterval(currentTime, 1000); 
+        function currentTime() { 
             let time = new Date(); 
             let hour = time.getHours(); 
             let min = time.getMinutes(); 
             let sec = time.getSeconds(); 
-            am_pm = "AM"; 
+            let sam_pm = "AM"; 
   
             if (hour > 12) { 
                 hour -= 12; 
@@ -55,14 +55,14 @@
             min = min < 10 ? "0" + min : min; 
             sec = sec < 10 ? "0" + sec : sec; 
   
-            let currentTime = hour + ":"  
+            let showTime = hour + ":"  
                 + min + ":" + sec + am_pm; 
   
             document.getElementById("clock") 
-                .innerHTML = currentTime; 
+                .innerHTML = showTime; 
         } 
   
-        showTime(); 
+        currentTime(); 
     </script> 
 </body> 
   
